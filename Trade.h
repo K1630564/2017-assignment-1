@@ -4,10 +4,8 @@
 
 #include "vector.h"
 #include <iostream>
-using std::cout;
-using std::distance;
-using std::min_element;
-using std::max_element;
+#include <iterator>
+#include <algorithm>
 using pep::vector;
 
 
@@ -33,18 +31,22 @@ public:
 
 Trade bestBuySellTime(vector<int> prices){
 
+    /*
+    int temp = prices[0];
 
-   // for(int i = 0; i < prices.size; i++){
+    for(int i = 0; i < prices.size; i++){
 
-      //  int buyTime = prices.at(i);
-      //  int sellTime = prices.at(i);
+        if(prices[i] < temp){
+            temp = prices[i];
+            buyTime = distance(prices.begin(), )
 
-        //buyTime = i;
- //   }
+        }
+    }
 
 
-   // cout << buyTime;
-  //  cout << sellTime;
+    cout << buyTime;
+    cout << sellTime;
+     */
 
      int buyTime = distance(prices.begin(), min_element(prices.begin(), prices.end()));
      int sellTime = distance(prices.begin(), max_element(min_element(prices.begin(), prices.end()), prices.end()));
