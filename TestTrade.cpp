@@ -13,7 +13,7 @@ int main() {
     
     // NB this next line won't compile until you've implemented bestBuySellTime
     Trade trade = bestBuySellTime(prices);
-    
+
     int retval = 0;
     
     if (trade.getBuyTime() == 1) {

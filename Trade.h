@@ -3,6 +3,9 @@
 
 
 #include "vector.h"
+#include <iostream>
+using std::cout;
+using std::distance;
 using pep::vector;
 
 
@@ -26,7 +29,17 @@ public:
 
 };
 
-// TODO your code goes here:
+Trade bestBuySellTime(vector<int> prices){
+
+
+     int buyTime = distance(prices.begin(), min_element(prices.begin(), prices.end()));
+     int sellTime = distance(prices.begin(), max_element(min_element(prices.begin(), prices.end()), prices.end()));
+
+return Trade(buyTime, sellTime);
+
+
+
+}
 
 
 
