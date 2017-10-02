@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 
 int main() {
-    vector<int> prices{28, 18, 20, 26, 24};
+    vector<int> prices{28, 18, 20, 26, 24, 12};
     
     
     // NB this next line won't compile until you've implemented bestBuySellTime

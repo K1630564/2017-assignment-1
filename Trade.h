@@ -7,6 +7,7 @@
 #include <iterator>
 #include <algorithm>
 using pep::vector;
+using std::cout;
 
 
 class Trade {
@@ -31,22 +32,22 @@ public:
 
 Trade bestBuySellTime(vector<int> prices){
 
-    /*
+
     int temp = prices[0];
 
-    for(int i = 0; i < prices.size; i++){
+    for(int i = 0; i < prices.size(); i++){
 
         if(prices[i] < temp){
             temp = prices[i];
-            buyTime = distance(prices.begin(), )
+
+            if(temp == prices.back()){ // if lowest value is last in the vector, then remove it and restart loop
+                prices.pop_back();
+                temp = prices[0];
+                i = 0;
+            }
 
         }
     }
-
-
-    cout << buyTime;
-    cout << sellTime;
-     */
 
      int buyTime = distance(prices.begin(), min_element(prices.begin(), prices.end()));
      int sellTime = distance(prices.begin(), max_element(min_element(prices.begin(), prices.end()), prices.end()));
