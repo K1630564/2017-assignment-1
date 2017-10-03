@@ -34,8 +34,8 @@ Trade bestBuySellTime(vector<int> prices){
 
 
     int temp = 0;
-    int buyTime;
-    int sellTime;
+    int buyTime = 0;
+    int sellTime = 0;
 
     for(int i = 0; i < prices.size(); i++){
 
