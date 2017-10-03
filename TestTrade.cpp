@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 
 int main() {
-    vector<int> prices{28, 18, 20, 26, 24, 12};
+    vector<int> prices{4 ,5 ,70 ,3 ,2 ,4 ,6};
     
     
     // NB this next line won't compile until you've implemented bestBuySellTime
@@ -16,7 +16,7 @@ int main() {
 
     int retval = 0;
     
-    if (trade.getBuyTime() == 1) {
+    if (trade.getBuyTime() == 0) {
         cout << "Buy time of 1 is correct\n";
     } else {
         cout << "Buy time of " << trade.getBuyTime() << " is incorrect\n";
@@ -24,7 +24,7 @@ int main() {
     } 
     
     
-    if (trade.getSellTime() == 3) {
+    if (trade.getSellTime() == 2) {
         cout << "Sell time of 3 is correct\n";
     } else {
         cout << "Sell time of " << trade.getSellTime() << " is incorrect\n";

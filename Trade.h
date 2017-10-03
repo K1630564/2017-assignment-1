@@ -34,11 +34,15 @@ Trade bestBuySellTime(vector<int> prices){
 
 
     int temp = prices[0];
+    int buyTime;
+    int sellTime;
 
     for(int i = 0; i < prices.size(); i++){
 
         if(prices[i] < temp){
             temp = prices[i];
+
+            buyTime = i;
 
             if(temp == prices.back()){ // if lowest value is last in the vector, then remove it and restart loop
                 prices.pop_back();
@@ -46,10 +50,16 @@ Trade bestBuySellTime(vector<int> prices){
                 i = 0;
             }
 
+
         }
+
+
+
     }
 
-     int buyTime = distance(prices.begin(), min_element(prices.begin(), prices.end()));
+    cout << buyTime;
+     //int buyTime = hej;
+     // int buyTime = distance(prices.begin(), min_element(prices.begin(), prices.end()));
      int sellTime = distance(prices.begin(), max_element(min_element(prices.begin(), prices.end()), prices.end()));
 
 return Trade(buyTime, sellTime);
