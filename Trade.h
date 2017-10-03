@@ -33,34 +33,26 @@ public:
 Trade bestBuySellTime(vector<int> prices){
 
 
-    int temp = prices[0];
+    int temp = 0;
     int buyTime;
     int sellTime;
 
     for(int i = 0; i < prices.size(); i++){
 
-        if(prices[i] < temp){
-            temp = prices[i];
 
-            buyTime = i;
+        for(int z = i+1; z < prices.size(); z++){
 
-            if(temp == prices.back()){ // if lowest value is last in the vector, then remove it and restart loop
-                prices.pop_back();
-                temp = prices[0];
-                i = 0;
+            if(prices[z] - prices[i] > temp){
+
+                temp = prices[z] - prices[i];
+                buyTime = i;
+                sellTime = z;
             }
-
-
         }
 
 
 
     }
-
-    cout << buyTime;
-     //int buyTime = hej;
-     // int buyTime = distance(prices.begin(), min_element(prices.begin(), prices.end()));
-     int sellTime = distance(prices.begin(), max_element(min_element(prices.begin(), prices.end()), prices.end()));
 
 return Trade(buyTime, sellTime);
 
