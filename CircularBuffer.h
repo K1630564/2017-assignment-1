@@ -3,7 +3,10 @@
 
 
 #include "vector.h"
+#include <iostream>
 using pep::vector;
+using std::cout;
+using std::endl;
 
 
 /** TODO: complete the definition of the class CircularBuffer here
@@ -18,8 +21,76 @@ using pep::vector;
  */
 class CircularBuffer {
 
+private:
+    vector<char> first;
+    int temp = 0;
+    int currentSize;
+    int currentIndex;
+
+public:
+    CircularBuffer (int n) : first(n){
+
+      
+    }
+
     
+    int count(){
+       
+        return currentSize;
+    }
+
+    bool full(){
+        
+        if(first.capacity() == currentSize){
+           return true;
+        }
+        return false;
+
+    }
+
+    void add(char toAdd){
+
+        for(int i = 0; i < first.capacity(); i++){
+
+            
+            if(first[i] == NULL){
+                first[i] = toAdd;
+                currentSize++;
+                currentIndex = i;
+                break;
+            }
+
+        }
+
+
+
+    }
+
+    char remove(){
+
+         if(first.size() == 1){
+             char elementToReturn = first[currentIndex];
+             first.erase(first.begin() + currentIndex);
+             currentSize--;
+             return elementToReturn;
+
+         }
+
+        int toRemove = first.capacity() % (currentIndex + (first.capacity()-currentIndex));
+        char  removee = first[toRemove];
+        first.erase(first.begin() + toRemove);
+        currentSize--;
+        currentIndex = toRemove;
+        return removee;
+
+
+
+
+    }
+
+
 };
+
 
 
 // don't write any code below this line
