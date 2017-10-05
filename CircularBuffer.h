@@ -24,8 +24,8 @@ class CircularBuffer {
 private:
     vector<char> first;
     int temp = 0;
-    int currentSize;
-    int currentIndex;
+    int currentSize = 0;
+    int currentIndex = 0;
 
 public:
     CircularBuffer (int n) : first(n){
